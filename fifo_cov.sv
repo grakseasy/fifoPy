@@ -42,6 +42,12 @@ option.name = "fifo_cg";
         bins    wrap_on_full_0 = {0};
         bins    wrap_on_full_1 = {1};
     }
+wr_en_vs_full : cross item.wr_en, item.full;
+rd_en_vs_full : cross item.rd_en, item.full;
+rd_en_vs_empty : cross item.rd_en, item.empty;
+wr_en_vs_empty : cross item.wr_en, item.empty;
+wr_en_vs_wrap_on_full : cross item.wr_en, item.wrap_on_full;
+rd_en_vs_wrap_on_full : cross item.rd_en, item.wrap_on_full;
 endgroup
 
 
