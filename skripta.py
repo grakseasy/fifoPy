@@ -51,10 +51,10 @@ with open('fifo_cov.sv', 'w') as file:
         file.write('    {\n')
         for i, bin_range in enumerate(cp_bins.split('{')[1].split('}')[0].split(',')):
             file.write('        bins    ' + cp_name + '_' + str(i) + ' = {' + bin_range.strip() + '};\n')
-        file.write('    }\n')
+        file.write('    }\n\n')
     for bf, af in cross_list:
         file.write(bf + '_vs_' + af + ' : cross item.' + bf + ', item.' + af + ';\n')
-    file.write('endgroup\n')
+    file.write('\nendgroup\n')
     file.write('\n\n`endif')
 
 #coverpoints list: ('HRDATA', 'SPLIT_BINS:HRDATA= { [32'h0:32'h66666665], 32'h66666666:32'hcccccccb, 32'hcccccccc:32'hffffffff}'), ...
